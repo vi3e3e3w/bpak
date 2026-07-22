@@ -44,15 +44,14 @@ match cmd:
         package = sys.argv[2]
         print("Hello",user,"we are going to install:")
         print(package)
-        subprocess.run([
+        result = subprocess.run([
             "apt",
             "install",
             package
         ])
         
-        result = subprocess.run([...])
         
-        if result == 0:
+        if result.retuncode == 0:
             print("OK now")
             print(package,"now existed in your computer")
             print("Enjoy it =)")
